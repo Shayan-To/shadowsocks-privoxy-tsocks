@@ -34,7 +34,7 @@ $ tsocks wget https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
 ### install shadowsocks
 ```
 $ sudo yum install python-pip
-$ sudo pip install shadowsocks
+$ sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 ```
 
 ### shadowsocks client config
@@ -52,8 +52,9 @@ $ cat /etc/shadowsocks/client.json
 
 ### shadowsocks service config
 ```
-$ sudo wget https://gist.githubusercontent.com/Jimmy-Xu/76a39aaee5e8515e06bd/raw/136905c597fdec070635129db60a88700b157733/sslocal -O /etc/init.d/sslocal
+$ sudo wget https://raw.githubusercontent.com/Shayan-To/shadowsocks-privoxy-tsocks/master/init.d/sslocal -O /etc/init.d/sslocal
 $ sudo chmod +x /etc/init.d/sslocal
+$ sudo update-rc.d sslocal defaults
 ```
 
 ### start shadowsocks service
