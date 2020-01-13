@@ -14,6 +14,12 @@ $ export no_proxy=localhost,127.0.0.0/8,::1,/var/run/docker.sock,mirrors.163.com
 $ curl http://www.google.com
 ```
 
+### use `shadowsocks+tsocks`
+```
+$ tsocks git clone https://github.com/hyperhq/hyper.git
+$ tsocks wget https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
+```
+
 ### use host os's proxy in docker container/Dockerfile
 ```
 FROM ubuntu:14.04
@@ -21,12 +27,6 @@ ENV http_proxy http://172.17.0.1:8118
 ENV https_proxy https://172.17.0.1:8118
 ENV no_proxy localhost,127.0.0.0/8,::1,mirrors.163.com
 ADD http://mirrors.163.com/.help/sources.list.trusty /etc/apt/sources.list
-```
-
-### use `shadowsocks+tsocks`
-```
-$ tsocks git clone https://github.com/hyperhq/hyper.git
-$ tsocks wget https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz
 ```
 
 ## Install and config shadowsocks
@@ -41,7 +41,7 @@ $ sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 ```
 $ cat /etc/shadowsocks/client.json 
 {
-    "server"  : "x.x.x.x",
+    "server": "x.x.x.x",
     "server_port": 8388,
     "local_port": 1080,
     "password": "aaa123aa",
