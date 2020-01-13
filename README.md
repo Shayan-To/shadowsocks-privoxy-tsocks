@@ -40,14 +40,14 @@ $ sudo pip install shadowsocks
 ### shadowsocks client config
 ```
 $ cat /etc/shadowsocks/client.json 
-  {
+{
     "server"  : "x.x.x.x",
     "server_port": 8388,
     "local_port": 1080,
     "password": "aaa123aa",
     "timeout": 600,
     "method": "aes-256-cfb"
-  }
+}
 ```
 
 ### shadowsocks service config
